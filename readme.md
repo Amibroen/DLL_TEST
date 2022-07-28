@@ -17,4 +17,4 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 gcc -o test_ransac_tdoa main.c -lm
 
 # Runing
-./test_ransac_locator
+./test_ransac_tdoa
