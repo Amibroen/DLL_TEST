@@ -66,5 +66,16 @@ int main() {
     printf("groundtruth_x:%lf, groundtruth_y:%lf\n", groundtruth_x, groundtruth_y);
     printf("final result: success:%d, estimated_x:%lf, estimated_y:%lf, time cost:%lfs.\n", success, pos.x, pos.y, (double)(finish - start) / CLOCKS_PER_SEC);
     
+    FILE *fp = fopen("sites.csv", "w+");
+        if (fp == NULL) {
+            fprintf(stderr, "fopen() failed.\n");
+            exit(EXIT_FAILURE);
+        }
+
+    fprintf(fp, "x,y\n");
+    fprintf(fp, "%f,%f\n", pos.x, pos.y);
+    fclose(fp);
+
+    
     return 0;
 }
